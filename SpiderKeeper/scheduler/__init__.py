@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 
 from apscheduler.schedulers.twisted import TwistedScheduler
-from SpiderKeeper.scheduler.jobs import add_jobs
+from SpiderKeeper.scheduler.jobs import JobsAdder
 
 
 def run_scheduler(flask_app):
     scheduler = TwistedScheduler()
-    add_jobs(scheduler, flask_app)
+    JobsAdder(scheduler, flask_app).add_jobs()
     scheduler.start()
