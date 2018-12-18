@@ -37,6 +37,6 @@ SERVERS = ['http://localhost:6800']
 
 # basic auth
 NO_AUTH = False
-BASIC_AUTH_USERNAME = 'admin'
-BASIC_AUTH_PASSWORD = 'admin'
+BASIC_AUTH_USERNAME = os.environ.get('USERNAME', None)
+BASIC_AUTH_PASSWORD = os.environ.get('PASSWORD', None)
 BASIC_AUTH_FORCE = True
